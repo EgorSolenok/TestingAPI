@@ -21,9 +21,9 @@ class PostClient(BaseClient):
         comments_url = f'{self.base_url}/{post_id}/comments'
         return self.request.get(comments_url), 'GET'
 
-    def read_one_comment_by_comment_id(self, comment_id):
-        comment_url = f'{self.base_url}/{comment_id}'
-        return self.request.get(comment_url), 'GET'
+    def read_one_post_by_post_id(self, post_id):
+        post_url = f'{self.base_url}/{post_id}'
+        return self.request.get(post_url), 'GET'
 
     def delete_post_by_id(self, post_id):
         post_url = f'{self.base_url}/{post_id}'
