@@ -13,6 +13,9 @@ cerberus = "*"
 pytest-xdist = {extras = ["psutil"], version = "*"}
 psutil = "*"
 faker = "*"
+loguru = "*"
+allure-pytest = "*"
+allure-python-commons = "*"
 
 [dev-packages]
 

@@ -7,20 +7,20 @@ from tests.assertions.posts_assertions import *
 
 
 
-@pytest.fixture(scope='module', params=[10])
+@pytest.fixture(scope='module', params=["/"])
 def delete_post(request):
     client = PostClient()
     post_id = request.param
-    response, method = client.delete_post_by_id(post_id)
+    response, method = client.delete_post_invalid_url()
     yield dict(response=response, method=method, post_id=post_id)
 
 
-
+@pytest.mark.xfail
 def test_status_code(delete_post):
     assert_response_status_code_is_correct(delete_post['response'], delete_post['method'])
 
-def test_body_is_empty(delete_post):
-    assert_body_is_empty(delete_post['response'])
 
+
+@pytest.mark.xfail
 def test_correct_header(delete_post):
-    assert_header_have_correct_value(delete_post['response'], 'Server', 'cloudflare')
+    assert_header_have_correct_value(delete_post['response'], 'Server', 'AWS')

@@ -1,5 +1,3 @@
-
-
 class PostsScheme:
     SCHEME = {
         "userId": {'type': 'number'},
