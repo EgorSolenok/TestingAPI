@@ -38,15 +38,15 @@ To run all existing tests in parallel (positive, negative) and create report:
 
 `` pipenv run python -m pytest -n auto --tb=line --alluredir=report_data ``
 
-To run all positive tests and create report:
+To run all positive tests in parallel and create report:
 
 `` pipenv run python -m pytest .\tests\positive_tests\  -n auto --tb=line --alluredir=report_data ``
 
-To run all negative tests negative and create report:
+To run all negative tests in parallel and create report:
 
 `` pipenv run python -m pytest .\tests\positive_tests\ -n auto --tb=line --alluredir=report_data ``
 
-To running tests not in parallel - you should remove ``  -n auto  `` from commands.
+To running tests not in parallel - you should remove `` -n auto `` from commands.
 
 To create **Allure report** and open it - type in cmd being located in the folder path:
 
